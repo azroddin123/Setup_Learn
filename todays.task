@@ -1,0 +1,23 @@
+PaddleOCR Issues
+1. nvcc -V issues 
+
+From the terminal:
+
+ nano /home/username/.bashrc
+
+Inside there add the following: (replace cuda-8.0 with your version)
+ export PATH="/usr/local/cuda-11.2/bin:$PATH"
+ export LD_LIBRARY_PATH="/usr/local/cuda-11.2/lib64:$LD_LIBRARY_PATH"
+
+Now run nvcc --version
+
+Error : No module found skbuild
+solution : upgrate pip python-3 -m pip upgrade
+
+lmdb
+pyclipper
+imgaug
+tqdm
+Levensthien
+
+comment sort keys

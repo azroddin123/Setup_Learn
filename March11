@@ -1,0 +1,8 @@
+Extracting all tar files
+
+for f in *.tar; do tar xf "$f"; done
+
+
+
+
+

@@ -1,0 +1,64 @@
+mobaxterm connecting to remote desktop steps 
+
+1. SSH ==> command line
+2. RDP ==> GUI 
+
+
+1. for SSH
+
+1. New Session 
+
+2. Enter IP address of remote host 
+   240.198.14.68
+   216.48.179.66
+3. username password 
+   azhar   password4 
+4. add bookmark also to RDP and ssh to know the status 
+
+
+Setting up RDP : 
+
+1.Install Xfce package:
+sudo apt update
+sudo apt install -y xfce4 xfce4-goodies xorg dbus-x11 x11-xserver-utils
+
+2.Installing Xrdp:
+sudo apt install -y xrdp
+sudo systemctl status xrdp
+sudo adduser xrdp ssl-cert
+
+3.Configuring Xrdp
+sudo nano /etc/xrdp/xrdp.ini
+
+exec startxfce4
+
+sudo systemctl restart xrdp
+sudo adduser xrdp ssl-cert
+
+4.restart the Xrdp service
+sudo systemctl restart xrdp
+
+5.Configuring Firewall
+sudo apt install ufw
+sudo ufw allow from 192.168.1.0/24 to any
+sudo ufw allow 3389
+
+sudo iptables -A INPUT -p tcp --dport 3389 -j ACCEPT
+
+
+6.Modify the Xwrapper.config file when 
+you get a blank screen when removing in.
+sudo nano /etc/X11/Xwrapper.config
+
+
+allowed_users=console
+to
+
+allowed_users=anybody
+
+7. Restart xrdp service:
+sudo systemctl restart xrdp
+
+8. Create a Sudo User
+sudo adduser [username]
+sudo usermod -aG sudo [username]

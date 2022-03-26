@@ -1,0 +1,25 @@
+1.file and folder icon not showing 
+
+ Install twaek tools for icon display
+
+$ sudo add-apt-repository universe
+$ sudo apt install gnome-tweak-tool
+activate tweak tools and change appearance seting to humanity
+
+$ gnome-tweaks
+
+2.Check all runnig process in ubuntu 
+
+$ ps aux
+
+to search specific process running on ubuntu 
+
+$ ps aux | grep "python3"
+
+Kill Process in ubuntu
+
+$sudo kill <pid> or $ sudo killall <process-name>
+
+$ kill -9 [pid]
+
+git token : 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
